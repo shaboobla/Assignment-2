@@ -1,15 +1,24 @@
 
 public class BTSub extends BinaryTree {
 
-	public int preOrderNumber() {
+	public void preOrderNumber(Node focusNode) {
+		int n = 0;
+		if (focusNode != null){
+			++n;
+			focusNode.preOrderNum = n;
+			
+			preOrderNumber(focusNode.leftChild);
+			
+			preOrderNumber(focusNode.rightChild);
+		}
 
 	}
 
-	public int inOrderNumber() {
+	public void inOrderNumber() {
 
 	}
 
-	public int postOrderNumber() {
+	public void postOrderNumber() {
 
 	}
 
@@ -33,5 +42,18 @@ class Node {
 	int preOrderNum;
 	int inOrderNum;
 	int postOrderNum;
+	int key;
+	char chr;
 
+	Node leftChild;
+	Node rightChild;
+
+	Node(int key, char chr) {
+		this.key = key;
+		this.chr = chr;
+	}
+
+	public String toString() {
+		return chr + " has a key of " + key;
+	}
 }
