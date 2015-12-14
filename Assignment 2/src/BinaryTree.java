@@ -1,5 +1,26 @@
 
 public class BinaryTree {
+	class Node {
+		
+		int preOrderNum;
+		int inOrderNum;
+		int postOrderNum;
+		int key;
+		char chr;
+
+		Node parent;
+		Node leftChild;
+		Node rightChild;
+
+		public Node(int key, char chr) {
+			this.key = key;
+			this.chr = chr;
+		}
+
+		public String toString() {
+			return chr + " has a key of " + key;
+		}
+	}
 
 	Node root;
 
@@ -41,17 +62,17 @@ public class BinaryTree {
 
 	}
 
-	public void inOrderNext(Node x) {
+	public void inOrderNext(int x) {
 
 		Node check = root;
 
-		if (x.key <= check.key) {
-			while (check != x) {
+		if (x <= check.key) {
+			while (check.key != x) {
 				if (check.leftChild != null)
 					check = check.leftChild;
 
 			}
-			if (check == x) {
+			if (check.key == x) {
 				if (check.rightChild != null) {
 					check = check.rightChild;
 					System.out.println(check);
@@ -66,13 +87,13 @@ public class BinaryTree {
 			}
 
 		}
-		if (x.key > check.key){
-			while(check != x){
+		if (x > check.key){
+			while(check.key != x){
 				if(check.rightChild != null)
 					check = check.rightChild;
 			}
 			
-			if(check == x){
+			if(check.key == x){
 				if(check.rightChild != null){
 					check = check.rightChild;
 					System.out.println(check);
@@ -137,31 +158,12 @@ public class BinaryTree {
 		theTree.addNode(65, 'f');
 		theTree.addNode(85, 'g');
 
-		theTree.inOrderNext(25);
+		theTree.inOrderNext(50);
 		/* theTree.preOrderTraverse(theTree.root);
 		System.out.println();
 		theTree.inOrderTraverse(theTree.root);
 		System.out.println();
 		theTree.postOrderTraverse(theTree.root); */
 
-	}
-}
-
-class Node {
-
-	int key;
-	char chr;
-
-	Node parent;
-	Node leftChild;
-	Node rightChild;
-
-	Node(int key, char chr) {
-		this.key = key;
-		this.chr = chr;
-	}
-
-	public String toString() {
-		return chr + " has a key of " + key;
 	}
 }

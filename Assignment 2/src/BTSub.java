@@ -37,18 +37,16 @@ public class BTSub extends BinaryTree {
 	}
 }
 
-class Nodes {
+/* class Nodes {
 
-	int preOrderNum;
-	int inOrderNum;
-	int postOrderNum;
+	
 	int key;
 	char chr;
 
-	Node leftChild;
-	Node rightChild;
+	Nodes leftChild;
+	Nodes rightChild;
 
-	Node(int key, char chr) {
+	public Nodes(int key, char chr) {
 		this.key = key;
 		this.chr = chr;
 	}
@@ -56,4 +54,4 @@ class Nodes {
 	public String toString() {
 		return chr + " has a key of " + key;
 	}
-}
+} */
