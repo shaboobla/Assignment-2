@@ -37,7 +37,7 @@ public class BTSub extends BinaryTree {
 	}
 }
 
-class Node {
+class Nodes {
 
 	int preOrderNum;
 	int inOrderNum;
